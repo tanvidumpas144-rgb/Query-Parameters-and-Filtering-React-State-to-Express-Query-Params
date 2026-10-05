@@ -5,7 +5,7 @@
 // search box and sort dropdown have no effect on the server.
 //
 // Requirements (the auto-grader checks these):
-//   • Accept a `filters` argument — an object like { search, sort }.
+//   • Accept a filters argument — an object like { search, sort }.
 //   • Pass it to Axios as request params:
 //       apiClient.get("/api/threads", { params: filters })
 //     Axios serialises it into the URL:  ?search=…&sort=…
@@ -19,8 +19,8 @@
 // ─────────────────────────────────────────────────────────────
 import apiClient from "./apiClient";
 
-export async function getThreads() {
-  // TODO: accept `filters` and pass it as { params: filters }
-  const response = await apiClient.get("/api/threads");
+export async function getThreads(filters) {
+  // TODO: accept filters and pass it as { params: filters }
+  const response = await apiClient.get("/api/threads", { params: filters });
   return response.data;
 }
